@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>College Event Registration</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f3f6fa;
+            color: #222;
+        }
+
+        .hero {
+            width: 100%;
+            height: 360px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-text {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: rgba(0,0,0,0.35);
+            color: white;
+        }
+
+        .hero-text h1 {
+            font-size: 38px;
+            margin: 0 0 10px;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+        }
+
+        .campus {
+            width: 90%;
+            max-width: 1000px;
+            margin: 25px auto;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.15);
+        }
+
+        .campus img {
+            width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 650px;
+            margin: 25px auto 50px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            font-size: 15px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 13px;
+            border: none;
+            border-radius: 7px;
+            background: #222;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #444;
+        }
+
+        #success {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: #e7f7e7;
+            color: #18752a;
+            border-radius: 7px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="hero">
+
+        <img src="college-campus.webp" alt="College campus">
+
+        <div class="hero-text">
+            <h1>🎓 College Event Registration</h1>
+            <p>Register for upcoming college events</p>
+        </div>
+
+    </section>
+
+    <div class="campus">
+
+        <img src="college-front.webp" alt="College building">
+
+    </div>
+
+    <div class="container">
+
+        <h2>Student Registration</h2>
+
+        <p class="subtitle">
+            Enter your details to register for an event.
+        </p>
+
+        <form id="registrationForm">
+
+            <label>Student Name</label>
+            <input type="text"
+                   placeholder="Enter your full name"
+                   required>
+
+            <label>Email</label>
+            <input type="email"
+                   placeholder="Enter your email"
+                   required>
+
+            <label>Phone Number</label>
+            <input type="tel"
+                   placeholder="Enter phone number"
+                   required>
+
+            <label>Department</label>
+
+            <select required>
+                <option value="">Select Department</option>
+                <option>BCA</option>
+                <option>BBA</option>
+                <option>B.Com</option>
+                <option>B.Sc</option>
+                <option>B.A</option>
+                <option>MCA</option>
+            </select>
+
+            <label>Year</label>
+
+            <select required>
+                <option value="">Select Year</option>
+                <option>First Year</option>
+                <option>Second Year</option>
+                <option>Third Year</option>
+            </select>
+
+            <label>Select Event</label>
+
+            <select required>
+                <option value="">Select Event</option>
+                <option>Coding Competition</option>
+                <option>Quiz Competition</option>
+                <option>Debate Competition</option>
+                <option>Dance Competition</option>
+                <option>Singing Competition</option>
+                <option>Poster Making</option>
+                <option>Sports Event</option>
+            </select>
+
+            <label>Registration Date</label>
+
+            <input type="date" required>
+
+            <button type="submit">
+                REGISTER NOW
+            </button>
+
+        </form>
+
+        <div id="success">
+            ✅ Registration Successful!<br>
+            Your registration has been submitted.
+        </div>
+
+    </div>
+
+    <script>
+
+        document.getElementById("registrationForm")
+        .addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            document.getElementById("success")
+            .style.display = "block";
+
+        });
+
+    </script>
+
+</body>
+</html>
